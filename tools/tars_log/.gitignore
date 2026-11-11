@@ -1,0 +1,8 @@
+__pycache__/
+tars_logs/
+test/tars_log_sim
+test/test_core
+test/test_gyro_bias
+test/test_ctrl
+test/test_getup_nn
+test/*.dSYM/

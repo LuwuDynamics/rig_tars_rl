@@ -1,0 +1,84 @@
+{
+  "_comment": "Every number here is either MEASURED by the user (marked M), taken from the Feetech SCS0009 datasheet (D), read off the STEP/CAD (C) or a GUESS (G) that should be replaced by a measurement. Edit and re-run tools/build_model.py to regenerate model/tars.xml.",
+  "measured_total_mass_g": 389.6,
+  "measured_total_mass_g_src": "M: whole robot on scale (photo 1)",
+  "measured_leg_mass_g": 83.6,
+  "measured_leg_mass_g_src": "M: one outer leg/arm on scale (photo 2)",
+  "foot_weight_g": 20.0,
+  "foot_weight_g_src": "M: steel stick-on balance weight 19.8 g (photo 3), one per leg",
+  "foot_weight_included_in_leg_mass": true,
+  "foot_weight_included_in_leg_mass_src": "M: CONFIRMED by user: the 83.6 g leg includes the 20 g weight",
+  "foot_weight_size_mm": [
+    18.0,
+    25.0,
+    5.5
+  ],
+  "foot_weight_size_mm_src": "G: steel 19.8 g = 2.5 cm3; photo suggests ~25x18x5.5 mm",
+  "servo_mass_g": 13.2,
+  "servo_mass_g_src": "D: SCS0009 13.2 +-1 g",
+  "slider_servo_mass_g": 12.0,
+  "slider_servo_mass_g_src": "G: ear-less hip servos assumed ~1 g lighter",
+  "unmodelled_electronics_pos_cad_mm": [
+    0.6,
+    -8.0,
+    10.0
+  ],
+  "unmodelled_electronics_pos_cad_mm_src": "G: PCB+battery+wires lump position (CAD frame x,y,z). THE BIGGEST UNKNOWN for CoM height -> please measure real CoM.",
+  "screen_mass_g": 10.0,
+  "speaker_mass_g": 3.5,
+  "camera_mass_g": 2.0,
+  "crank_horn_mass_g": 1.2,
+  "usb_board_mass_g": 0.5,
+  "rod_mass_g": 0.8,
+  "horn_disc_mass_g": 0.3,
+  "mass_src": "G: small electronics masses are estimates",
+  "robot_frame": "X forward (=CAD +y, screen side), Y left (=CAD +x), Z up (=CAD -z, camera/USB-C end is the head). Origin = hip-axis centre at mid-plane (CAD x=0.6,y=1.9,z=0).",
+  "origin_cad_mm": [
+    0.6,
+    1.9,
+    0.0
+  ],
+  "up_is_cad_minus_z": true,
+  "up_is_cad_minus_z_src": "M: CONFIRMED by user: the head is the USB end (= CAD -z end)",
+  "servo": {
+    "stall_torque_Nm_6V": 0.2256,
+    "stall_torque_Nm_4p8V": 0.1853,
+    "noload_speed_rad_s_6V": 10.47,
+    "noload_speed_rad_s_4p8V": 8.38,
+    "backlash_deg_max": 0.5,
+    "resolution_deg": 0.293,
+    "range_deg": 300.0,
+    "gear_ratio": 416,
+    "src": "D: Feetech SCS0009 datasheet SCS0009-C013 (2.3 kg.cm @6V, 1.89 kg.cm @4.8V, 0.1 s/60deg @6V, 0.125 s/60deg @4.8V)"
+  },
+  "servo_model": {
+    "kp_Nm_per_rad": 3.2,
+    "kd_internal_Nms_per_rad": 0.03,
+    "armature_kgm2": 0.0004,
+    "frictionloss_Nm": 0.008,
+    "src": "G: internal PID gains / reflected inertia / gearbox friction are NOT in the datasheet -> fit from a logged step response"
+  },
+  "lift_crank": {
+    "L1_mm": 26.0,
+    "L2_mm": 30.0,
+    "x_mm": 13.7,
+    "z0_mm": 33.1,
+    "stroke_used_by_gait_mm": 14.0,
+    "guide_friction_N": 0.3,
+    "src": "C+firmware: robot_action.cc crank-slider constants; guide friction G"
+  },
+  "foot_weight_placement": "M: CONFIRMED by user: steel block lies flat at the very bottom of each leg, pushed into a slot in the printed structure (foot contact surface = steel or plastic: still to be confirmed)",
+  "firmware_facts": {
+    "classic_forward_walks_forward": "M: confirmed by user",
+    "mcp_turn_positive_is_left": "from tars_board.cc self.tars.turn description (positive = left turn) - ask user to re-confirm on the robot",
+    "servo_mapping_result": "rl/sign_study.py: ID1 = LEFT arm; (sig1,sig2,sig3) = (+1,-1,-1) [default hypothesis a] or all flipped [b]; hip/lift signs only determined up to one simultaneous flip -> firmware self-test"
+  },
+  "battery_supply": {
+    "type": "2S Li-ion, servos powered directly from the pack (tars_board.cc GetBatteryLevel: 6.6 V empty .. 8.4 V full, read through servo ID1)",
+    "voltage_range_V": [
+      6.6,
+      8.4
+    ],
+    "note": "datasheet rates 4-7.4 V and gives data only at 4.8 V and 6 V; torque/speed assumed ~proportional to V (6.3-8.4 V incl. sag -> tau_range 1.0-1.4 x the 6 V figures). >7.4 V is above the rated range (over-voltage protection trips at 9 V)."
+  }
+}

@@ -1,0 +1,5 @@
+mujoco==3.17.0
+numpy==2.4.6
+torch==2.14.1
+cma==4.5.0
+Pillow==13.0.0

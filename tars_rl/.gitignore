@@ -1,0 +1,5 @@
+/.build/
+/.venv/
+/runs/
+/media/
+/firmware/generated/
