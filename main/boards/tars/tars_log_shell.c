@@ -2,7 +2,7 @@
  * tars_log_shell.c - command shell, recording sessions and servo test driver of the Tars log tool.
  *
  * Portable C99 (no ESP-IDF): everything it needs from the robot goes through tars_log_port.h, so the same code is
- * exercised on the host by tools/tars_log/test/ against a simulated robot and the real PC tool (tars_serial.py).
+ * exercised on the host against a simulated robot.
  *
  * Protocol (device -> host), every line is one of
  *   "# text"                       human readable information
@@ -656,7 +656,7 @@ static void cmd_help(int argc, char **argv)
         "  selftest 0..3                   servo direction self-test poses",
         "  imu [regs|raw [n]|reinit|fs <0..3>]  QMI8658 register diagnostics (reinit / fs change the chip until reboot)",
         "  link usb|console                answer path: direct (default) or the plain console (slow fallback)",
-        "  baud <rate>                     UART speed, e.g. 921600 (PC tool: --fast); reverts to 115200 if the PC does not follow",
+        "  baud <rate>                     UART speed, e.g. 921600; reverts to 115200 if the PC does not follow",
         "  reboot",
     };
     (void)argc;

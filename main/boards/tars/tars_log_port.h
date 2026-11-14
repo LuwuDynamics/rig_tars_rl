@@ -1,7 +1,7 @@
 /*
  * tars_log_port.h - the few platform services the portable log shell (tars_log_shell.c) needs.
  *
- * Implemented by tars_log.cc on the robot and by the host-side simulator in tools/tars_log/test/ for the self test.
+ * Implemented by tars_log.cc on the robot and by the host simulator for tests.
  */
 #ifndef TARS_LOG_PORT_H
 #define TARS_LOG_PORT_H

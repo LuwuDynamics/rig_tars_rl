@@ -412,7 +412,7 @@ void tars_log_init(void)
     tars_log_shell_init();
     s_msgq = xQueueCreate(8, kMsgChars);
     xTaskCreatePinnedToCore(log_task, "tars_log", 8192, nullptr, 2, nullptr, 1);
-    printf("tars_log: serial log/test tool ready (PC side: python3 tools/tars_log/tars_serial.py check)\n");
+    printf("tars_log: serial log/test tool ready (PC side: python3 tools/tars_log/tars_serial.py scan)\n");
 }
 
 bool tars_log_owns_bus(void) { return tars_log_shell_bus_active(); }

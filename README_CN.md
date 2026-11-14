@@ -65,7 +65,7 @@ MuJoCo 工作区包含机器人模型、舵机拟合数据、行为克隆和 PPO
 | [`main/boards/tars/`](main/boards/tars) | 板级支持、运动控制、标定、屏幕与语音 |
 | [`tars_rl/`](tars_rl) | MuJoCo 模型、训练、检查点与仿真 |
 | [`configs/`](configs) | 国内版和海外版构建配置 |
-| [`tools/tars_log/`](tools/tars_log) | 串口诊断、遥测采集和主机测试 |
+| [`tools/tars_log/`](tools/tars_log) | 编译、烧录和基础串口诊断 |
 | [`docs/`](docs) | RIG-Omni 平台文档 |
 
 仓库也包含 RIG-Puppy、RIG-Hover 和 RIG-ARM 共用的 RIG-Omni 固件。在 `idf.py menuconfig` 的 **RIG-Omni** 菜单中选择对应板型和固件区域即可编译。

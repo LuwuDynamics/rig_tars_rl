@@ -6,7 +6,7 @@
  *   - record IMU + servo read-back + servo commands at up to 100-200 Hz into RAM and send them to the PC as text
  *   - run servo step / sine tests and classic-gait walk / turn tests while recording
  *   - hold poses, switch the servos limp (move legs by hand), run the IMU axis calibration, switch the learned mode
- * Host side: tars_serial.py (see LOGGING.md).  Nothing happens until the host sends a command.
+ * Host diagnostics: tools/tars_log/tars_serial.py.  Nothing happens until the host sends a command.
  *
  * Code layout: tars_log_core.* (events, ring, text format) and tars_log_shell.* (commands, sessions) are portable C99 and
  * unit-tested on the host; this header + tars_log.cc are the ESP32 glue (USB serial I/O, tasks, hooks into the robot).

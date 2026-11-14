@@ -65,7 +65,7 @@ The MuJoCo workspace includes the robot model, servo calibration data, behavior 
 | [`main/boards/tars/`](main/boards/tars) | Board support, motion control, calibration, display, and audio |
 | [`tars_rl/`](tars_rl) | MuJoCo model, training, checkpoints, and simulation |
 | [`configs/`](configs) | China and Global build profiles |
-| [`tools/tars_log/`](tools/tars_log) | Serial diagnostics, telemetry capture, and host tests |
+| [`tools/tars_log/`](tools/tars_log) | Build and flash helpers and basic serial diagnostics |
 | [`docs/`](docs) | RIG-Omni platform documentation |
 
 This repository includes the shared RIG-Omni firmware for RIG-Puppy, RIG-Hover, and RIG-ARM. To build for those boards, select the board and firmware region under **RIG-Omni** in `idf.py menuconfig`.

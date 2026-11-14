@@ -1,8 +1,7 @@
 /*
  * tars_log_core.h - portable C99 building blocks of the Tars serial log / test tool.
  *
- * No ESP-IDF dependency: the same file is compiled for the robot and for the host-side self test
- * (tools/tars_log/test/).  Contents:
+ * The robot and host tests compile the same source. No ESP-IDF dependency.
  *   - a wait-free multi-producer event ring (seqlock slots), used to record IMU / servo / command samples
  *   - integer-only text formatting of events ("@I,t_us,...*HH") - this build uses newlib-nano printf (no %f, no %lld)
  *   - tiny parsing helpers for the command line
