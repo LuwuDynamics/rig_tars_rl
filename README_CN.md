@@ -2,7 +2,7 @@
 
 面向 RIG-TARS 双足机器人的 ESP32-S3 固件，支持端侧强化学习起身、基于 IMU 的航向保持，以及 MuJoCo 训练和仿真。
 
-[English](README.md) · [固件发布](https://github.com/LuwuDynamics/rig_tars_rl/releases) · [训练与仿真](tars_rl/README.md)
+[English](README.md) · [在线烧录](https://tools.xgorobot.com/) · [固件发布](https://github.com/LuwuDynamics/rig_tars_rl/releases) · [训练与仿真](tars_rl/README.md)
 
 ## 实机演示
 
@@ -27,7 +27,9 @@ https://github.com/user-attachments/assets/2629a972-4706-4eba-9549-4180b5689733
 
 ## 固件
 
-请选择与设备区域匹配的版本。烧录包包含应用固件、对应资源、引导程序、分区表和烧录说明。
+用 USB 数据线将 TARS 连接到电脑，在桌面版 Chrome 或 Edge 中打开[官方烧录站](https://tools.xgorobot.com/)，选择 **RIG-TARS**。网页的语言按钮也决定固件版本。选择 **中文** 烧录国内版（中文语音），选择 **EN** 烧录海外版（英文语音），然后按页面提示完成烧录。
+
+如需离线烧录，可下载下表中对应区域的烧录包。包内包含应用固件、对应资源、引导程序、分区表和烧录说明。
 
 | 版本 | 语音 | 3.8.1 下载 |
 | --- | --- | --- |

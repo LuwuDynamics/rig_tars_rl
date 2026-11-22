@@ -2,7 +2,7 @@
 
 ESP32-S3 firmware for the RIG-TARS biped, with an on-device PPO recovery policy, IMU-based heading hold, and a MuJoCo training pipeline.
 
-[简体中文](README_CN.md) · [Firmware releases](https://github.com/LuwuDynamics/rig_tars_rl/releases) · [Training and simulation](tars_rl/README.md)
+[简体中文](README_CN.md) · [Web flasher](https://tools.xgorobot.com/) · [Firmware releases](https://github.com/LuwuDynamics/rig_tars_rl/releases) · [Training and simulation](tars_rl/README.md)
 
 ## Hardware demo
 
@@ -27,7 +27,9 @@ https://github.com/user-attachments/assets/2629a972-4706-4eba-9549-4180b5689733
 
 ## Firmware
 
-Use the build that matches your device region. Each download includes the application, matching assets, bootloader, partition table, and flashing instructions.
+Connect TARS to your computer with a USB data cable and open the [official web flasher](https://tools.xgorobot.com/) in desktop Chrome or Edge. Select **RIG-TARS**. The language switch also selects the firmware edition. Choose **EN** for Global firmware with English voice prompts or **中文** for China firmware with Chinese voice prompts, then follow the flashing prompts.
+
+For offline flashing, download the package for your region. Each download includes the application, matching assets, bootloader, partition table, and flashing instructions.
 
 | Edition | Voice | 3.8.1 download |
 | --- | --- | --- |
